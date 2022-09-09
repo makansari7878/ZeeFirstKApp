@@ -3,6 +3,7 @@ package com.example.zeefirstkapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
        setContentView(R.layout.activity_main)
         //setContentView(R.layout.canvas_sheet)
+        Log.i("mytag", "onCreate Method")
 
         var submitButton = findViewById<Button>(R.id.buttonSubmit)
         var usernameTextView = findViewById<TextView>(R.id.textViewUsername )
@@ -27,6 +29,39 @@ class MainActivity : AppCompatActivity() {
             myIntent.putExtra("keyun", username)
             startActivity(myIntent)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("mytag", "onStart Method")
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        Log.w("mytag", "onResume Method")
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        Log.i("mytag", "onPause Method")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("mytag", "onStop Method")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        Log.i("mytag", "onDestroy Method")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("mytag", "onReStart Method")
     }
 }
 
