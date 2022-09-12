@@ -1,6 +1,7 @@
 package com.example.zeefirstkapp
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,13 +22,24 @@ class MainActivity : AppCompatActivity() {
         var usernameEditText = findViewById<EditText>(R.id.editTextUsername)
 
         submitButton.setOnClickListener {
-           var username = usernameEditText.text.toString()
+          /* var username = usernameEditText.text.toString()
             Toast.makeText(this,"username is $username", Toast.LENGTH_LONG).show()
             usernameTextView.setText(username)
 
             var myIntent = Intent(this,SecondActivity::class.java)
             myIntent.putExtra("keyun", username)
-            startActivity(myIntent)
+            startActivity(myIntent)*/
+
+          /*  var i = Intent("shub")
+            startActivity(i)*/
+
+          /*  var i = Intent(Intent.ACTION_DIAL, Uri.parse("tel:9676565544"))
+            startActivity(i)*/
+
+            var i = Intent(Intent.ACTION_VIEW, Uri.parse("https://yahoo.com"))
+            startActivity(i)
+
+
         }
     }
 
